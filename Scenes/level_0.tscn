@@ -1,0 +1,5 @@
+[gd_scene format=3 uid="uid://ngpcc543x07o"]
+
+[ext_resource type="PackedScene" uid="uid://dr3omhohaga6w" path="res://Scenes/Test_Demo.tscn" id="1_m0b12"]
+
+[node name="Node3D" unique_id=907182766 instance=ExtResource("1_m0b12")]
