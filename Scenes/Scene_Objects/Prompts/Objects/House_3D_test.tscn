@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://2pwvxhkeq5v6"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_gjbpj"]
+size = Vector3(5, 5, 5)
+
+[sub_resource type="PrismMesh" id="PrismMesh_gjbpj"]
+size = Vector3(5, 3, 5)
+
+[node name="House3dTest" type="Node3D" unique_id=633233514]
+
+[node name="walls" type="MeshInstance3D" parent="." unique_id=2127510412]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.500134, 0)
+mesh = SubResource("BoxMesh_gjbpj")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1199167393]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 6.5, 0)
+mesh = SubResource("PrismMesh_gjbpj")

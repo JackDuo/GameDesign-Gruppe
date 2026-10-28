@@ -1,0 +1,110 @@
+[gd_scene format=3 uid="uid://b13l78s7u61y"]
+
+[ext_resource type="Texture2D" uid="uid://btpmfxuokd04m" path="res://Scenes/Scene_Objects/Prompts/assets/Campfire.png" id="1_oriiy"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1lre2"]
+atlas = ExtResource("1_oriiy")
+region = Rect2(0, 0, 25, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_v7u38"]
+atlas = ExtResource("1_oriiy")
+region = Rect2(25, 0, 25, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_b5v0m"]
+atlas = ExtResource("1_oriiy")
+region = Rect2(50, 0, 25, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pvgbv"]
+atlas = ExtResource("1_oriiy")
+region = Rect2(75, 0, 25, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_r0dx2"]
+atlas = ExtResource("1_oriiy")
+region = Rect2(100, 0, 25, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_20mpw"]
+atlas = ExtResource("1_oriiy")
+region = Rect2(125, 0, 25, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vlih8"]
+atlas = ExtResource("1_oriiy")
+region = Rect2(150, 0, 25, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3hg4p"]
+atlas = ExtResource("1_oriiy")
+region = Rect2(175, 0, 25, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2av5x"]
+atlas = ExtResource("1_oriiy")
+region = Rect2(200, 0, 25, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_x8xk6"]
+atlas = ExtResource("1_oriiy")
+region = Rect2(225, 0, 25, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_0x1u5"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1lre2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_v7u38")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_b5v0m")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pvgbv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_r0dx2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_20mpw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vlih8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3hg4p")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2av5x")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_x8xk6")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_gjbpj"]
+size = Vector3(1.2637329, 0.42289734, 0.253479)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_0x1u5"]
+size = Vector3(1, 1.0556641, 1)
+
+[node name="Campfire" type="MeshInstance3D" unique_id=1276699153]
+
+[node name="AnimatedSprite3D" type="AnimatedSprite3D" parent="." unique_id=693902396]
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 0, 0.8361007, 0)
+alpha_cut = 1
+sprite_frames = SubResource("SpriteFrames_0x1u5")
+autoplay = "default"
+
+[node name="Campfire" type="AnimatableBody3D" parent="." unique_id=510275955]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Campfire" unique_id=45390986]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.005279541, 0.23857725, 0.04623413)
+shape = SubResource("BoxShape3D_gjbpj")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="Campfire" unique_id=727572241]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.74801743, 0)
+shape = SubResource("BoxShape3D_0x1u5")
+
+[node name="OmniLight3D" type="OmniLight3D" parent="." unique_id=1413183402]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.71517944, 0)
+light_color = Color(0.8096678, 0.4297284, 0.3480034, 1)
+shadow_enabled = true

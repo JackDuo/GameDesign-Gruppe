@@ -1,0 +1,34 @@
+[gd_scene format=3 uid="uid://bgqotxvrars7r"]
+
+[ext_resource type="Texture2D" uid="uid://eroosibd6h0l" path="res://Assets/Props/Top-Down Simple Summer_Prop - Bushes Medium.png" id="1_0k533"]
+[ext_resource type="Texture2D" uid="uid://chhg0tpou4nt1" path="res://Assets/Props/Top-Down Simple Summer_Prop - Bushes Small.png" id="2_h0gbt"]
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_sotfb"]
+radius = 0.68603516
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_gjbpj"]
+radius = 1.1870117
+
+[node name="bush" type="MeshInstance3D" unique_id=1276699153]
+
+[node name="Campfire" type="AnimatableBody3D" parent="." unique_id=510275955]
+
+[node name="Sprite3D" type="Sprite3D" parent="Campfire" unique_id=1356545752]
+transform = Transform3D(2.3240035, 0, -0.22343853, 0, 2.2899182, 0, 0.5952613, 0, 0.872343, 0.5473461, 1.3290431, -0.2931285)
+shaded = true
+alpha_cut = 1
+texture = ExtResource("1_0k533")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Campfire" unique_id=45390986]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.83688825, 1.0608912, -1.174445)
+shape = SubResource("CylinderShape3D_sotfb")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="Campfire" unique_id=2098393426]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.9143181, 1.5755153, -0.44934702)
+shape = SubResource("CylinderShape3D_gjbpj")
+
+[node name="Sprite3D2" type="Sprite3D" parent="Campfire" unique_id=20177160]
+transform = Transform3D(1.9997087, 0, 0, 0, 2.175822, 0, 0, 0, 1, -0.9950019, 0.93468714, -1.0808337)
+shaded = true
+alpha_cut = 1
+texture = ExtResource("2_h0gbt")
