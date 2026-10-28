@@ -4,12 +4,14 @@ git...
 branch auswählen
 	... branch -M %Branch%
 				-->[main|Try_01|...]
-
-commit (erst local)
+Dateien zu git hinzufügen 
+	... add .  
+	
+commit (erst local) (vorher "add .")
 	... commit -m "Nachricht"
 
 
-push auf branch (online)
+push auf branch (online) (vorher commit)
 	... push -u origin %Branch%
 				-->[main|Try_01|...]
 
