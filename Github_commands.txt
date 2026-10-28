@@ -1,0 +1,36 @@
+git...
+
+
+branch auswählen
+	... branch -M %Branch%
+				-->[main|Try_01|...]
+
+commit (erst local)
+	... commit -m "Nachricht"
+
+
+push auf branch (online)
+	... push -u origin %Branch%
+				-->[main|Try_01|...]
+
+pull von branch (online
+	... pull -u origin %Branch%
+				-->[main|Try_01|...]
+
+
+
+GitHub repo wählen und ordner verlinken
+	... remote add origin https://github.com/JackDuo/GameDesign-Gruppe
+
+
+
+
+
+
+
+
+
+initiieren:
+	... init 
+& dateien hinzufügen
+	... add .  
