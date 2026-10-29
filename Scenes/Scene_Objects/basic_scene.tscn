@@ -1445,7 +1445,10 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.49838257, 0)
 shape = SubResource("CapsuleShape3D_gjbpj")
 
 [node name="Player_Camera" type="Camera3D" parent="." unique_id=1461751717]
-transform = Transform3D(1, 0, 0, 0, 0.8660254, 0.5, 0, -0.5, 0.8660254, 0, 13.462142, 23.705467)
-fov = 33.5
+transform = Transform3D(1, 0, 0, 0, 0.91066253, 0.4131509, 0, -0.4131509, 0.91066253, 9.536743e-07, 8.3863325, 15.568449)
+fov = 41.3
 script = ExtResource("14_brn83")
-set_fov = 11.645
+set_fov = 28.0
+set_angle = -17.12
+set_height_y = 15.62
+set_distance_z = 48.665

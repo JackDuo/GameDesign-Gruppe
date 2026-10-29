@@ -1,0 +1,39 @@
+[gd_scene format=3 uid="uid://71ct877cf0gi"]
+
+[ext_resource type="Texture2D" uid="uid://dwqa65ugvg3se" path="res://Assets/Houses/3d_demo/1.PNG" id="1_bbkxa"]
+[ext_resource type="Texture2D" uid="uid://b5ebrbh5p36c4" path="res://Assets/Houses/3d_demo/2.PNG" id="2_ywftf"]
+[ext_resource type="Texture2D" uid="uid://cvy8ykfqpmhfg" path="res://Assets/Houses/3d_demo/3.PNG" id="3_5wyvk"]
+[ext_resource type="Texture2D" uid="uid://d2iicdrtaql5e" path="res://Assets/Houses/3d_demo/4.PNG" id="4_ao0fw"]
+[ext_resource type="Texture2D" uid="uid://oa84r0124k2g" path="res://Assets/Houses/3d_demo/5.PNG" id="5_bn2ub"]
+
+[node name="House2p5Demo" type="Node3D" unique_id=182254951]
+
+[node name="Front" type="Sprite3D" parent="." unique_id=978075259]
+transform = Transform3D(1.0844399, 0, 0, 0, 1.0844399, 0, 0, 0, 1, 0, 5.478652, 2)
+shaded = true
+alpha_cut = 1
+texture = ExtResource("1_bbkxa")
+
+[node name="Front2" type="Sprite3D" parent="Front" unique_id=801696420]
+transform = Transform3D(0.922135, 0, 0, 0, 0.922135, 0, 0, 0, 1, 0, -0.5615177, -1)
+shaded = true
+alpha_cut = 1
+texture = ExtResource("2_ywftf")
+
+[node name="Front3" type="Sprite3D" parent="Front/Front2" unique_id=1068992951]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.9073486e-06, 0.18129444, -1)
+shaded = true
+alpha_cut = 1
+texture = ExtResource("3_5wyvk")
+
+[node name="Front4" type="Sprite3D" parent="Front/Front2/Front3" unique_id=1414971552]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.34970808, -0.29460335, -1)
+shaded = true
+alpha_cut = 1
+texture = ExtResource("4_ao0fw")
+
+[node name="Front5" type="Sprite3D" parent="Front/Front2/Front3/Front4" unique_id=2147191924]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.34970996, 0.34298468, -1)
+shaded = true
+alpha_cut = 1
+texture = ExtResource("5_bn2ub")

@@ -1,0 +1,291 @@
+[gd_scene format=3 uid="uid://d28lskxpdx4uv"]
+
+[ext_resource type="Script" uid="uid://ijmfbttp7afm" path="res://Scenes/Scene_Objects/Prompts/2.5D/Grass_Animation/2.5d_animated_gras_test.gd" id="1_sw1eg"]
+[ext_resource type="Texture2D" uid="uid://bhpabcvov84d6" path="res://Assets/Props/2.5D_Animatable_Grass_Test/2.png" id="2_q76lh"]
+[ext_resource type="Texture2D" uid="uid://c5r23ctppgdoq" path="res://Assets/Props/2.5D_Animatable_Grass_Test/1.png" id="3_fkk8g"]
+[ext_resource type="Texture2D" uid="uid://d22wysys1obu6" path="res://Assets/Props/2.5D_Animatable_Grass_Test/3.png" id="4_p4ftq"]
+[ext_resource type="Texture2D" uid="uid://qwwybf4xfc2b" path="res://Assets/Props/2.5D_Animatable_Grass_Test/4.png" id="5_pb0qf"]
+[ext_resource type="Texture2D" uid="uid://c58tcw8p21rjy" path="res://Assets/Props/2.5D_Animatable_Grass_Test/5.png" id="6_noxtn"]
+[ext_resource type="Texture2D" uid="uid://07jweyei0beq" path="res://Assets/Props/2.5D_Animatable_Grass_Test/6.png" id="7_0w8ks"]
+[ext_resource type="Texture2D" uid="uid://d34a0ww3okh8i" path="res://Assets/Props/2.5D_Animatable_Grass_Test/7.png" id="8_uv0eg"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_gjbpj"]
+radius = 0.6171698
+
+[sub_resource type="Shader" id="Shader_q76lh"]
+code = "shader_type spatial;
+render_mode depth_draw_opaque;
+
+// Das hier erstellt die \"Schnittstelle\" zum Inspektor
+uniform sampler2D meine_textur : source_color, filter_nearest;
+uniform float strength : hint_range(0.0, 0.15) = 0.04;
+uniform float speed : hint_range(0.0, 6.0) = 2.0;
+varying vec4 vertex_tint;
+
+
+void vertex() {
+    vertex_tint = COLOR;
+}
+
+void fragment() {
+    // Hole die Farbe aus der Textur, die du im Inspektor reinziehst
+    vec4 tex_color = texture(meine_textur, UV);
+    
+    ALBEDO = tex_color.rgb;
+    ALPHA = tex_color.a; 
+	
+	vec2 uv = UV;
+    float sway = sin(TIME * speed + uv.y * 3.0) * strength * (1.0 - uv.y);
+    uv.x += sway;
+    
+	if (tex_color.a < 0.1) {
+        discard; // Verwirft das Pixel komplett (keine Tiefen- oder Schattenberechnung dafür)
+    }
+	
+    tex_color = texture(meine_textur, uv);
+    ALBEDO = tex_color.rgb * vertex_tint.rgb;
+    ALPHA = tex_color.a * vertex_tint.a;
+}
+"
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_q7ds8"]
+render_priority = 0
+shader = SubResource("Shader_q76lh")
+shader_parameter/meine_textur = ExtResource("2_q76lh")
+shader_parameter/strength = 0.04
+shader_parameter/speed = 2.0
+
+[sub_resource type="Animation" id="Animation_fkk8g"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite3D5:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite3D4:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Sprite3D8:rotation")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Sprite3D3:rotation")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Sprite3D2:rotation")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Sprite3D6:rotation")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, -0.89709926, 0.14835298)]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("Sprite3D7:rotation")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_p4ftq"]
+resource_name = "grass_collition_animation_test"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite3D5:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.23, 0.45, 0.69),
+"transitions": PackedFloat32Array(1.0717735, 0.8122524, 1.0717733, 1),
+"update": 0,
+"values": [Vector3(0, -0.38397244, 0), Vector3(0, -0.38397244, 0), Vector3(0, 0.4035116, 0), Vector3(0, 0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite3D4:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.36666667, 0.56666666, 0.76666665),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(-0.07853982, -0.4834562, 0.47647488), Vector3(-0.033161256, -0.35604715, 0), Vector3(0, 0, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Sprite3D8:rotation")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.23, 0.5, 0.76666665),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(-0.09481174, -1.4377609e-09, 0.13812643), Vector3(0.12107346, 0.337866, 0), Vector3(0, 0, 0)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Sprite3D3:rotation")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.32, 0.64, 1),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0.24711919, 0.22582732, 0.1619766), Vector3(0.05253268, 0.03837722, 0.15431954), Vector3(0.05253268, 0.03837722, 0.15431954)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Sprite3D2:rotation")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 0.32, 0.61, 1),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0, 0, 0), Vector3(0, 0.71733034, 0), Vector3(0, 0, 0)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Sprite3D6:rotation")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0, 0.5, 1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0, -0.89709926, 0.14835298), Vector3(0, 0, 0)]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("Sprite3D7:rotation")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0, 0.51, 1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0.27679282, -0.75316507, -0.037464548), Vector3(0, 0, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_pb0qf"]
+_data = {
+&"RESET": SubResource("Animation_fkk8g"),
+&"grass_collition_animation_test": SubResource("Animation_p4ftq")
+}
+
+[node name="2_5dAnimatedGrasTest" type="Area3D" unique_id=510978416]
+script = ExtResource("1_sw1eg")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1288667078]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.65304935, -0.31479466)
+shape = SubResource("SphereShape3D_gjbpj")
+
+[node name="Sprite3D" type="MeshInstance3D" parent="." unique_id=1786293360]
+material_override = SubResource("ShaderMaterial_q7ds8")
+
+[node name="Sprite3D5" type="Sprite3D" parent="Sprite3D" unique_id=2097701312]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.2840555, 0.3472079)
+shaded = true
+alpha_cut = 1
+texture = ExtResource("4_p4ftq")
+
+[node name="Sprite3D4" type="Sprite3D" parent="Sprite3D" unique_id=1279985497]
+transform = Transform3D(1.0000001, 0, 0, 0, 0.99999994, 0, 0, 0, 1.0000001, 0, 1.2840555, -0.037699103)
+shaded = true
+alpha_cut = 1
+texture = ExtResource("3_fkk8g")
+
+[node name="Sprite3D8" type="Sprite3D" parent="Sprite3D" unique_id=257858322]
+transform = Transform3D(1.0000001, 0, 0, 0, 1.0000001, 0, 0, 0, 1.0000001, 0, 1.2840555, -0.17423958)
+shaded = true
+alpha_cut = 1
+texture = ExtResource("2_q76lh")
+
+[node name="Sprite3D3" type="Sprite3D" parent="Sprite3D" unique_id=1503342033]
+transform = Transform3D(1.0000002, 0, 0, 0, 0.99999976, 0, 0, 0, 1, 0, 1.2840555, 0.2211101)
+shaded = true
+alpha_cut = 1
+texture = ExtResource("5_pb0qf")
+
+[node name="Sprite3D2" type="Sprite3D" parent="Sprite3D" unique_id=1890600976]
+transform = Transform3D(1, 0, 0, 0, 0.9999999, 0, 0, 0, 0.9999999, 0, 1.2840555, -0.10643792)
+shaded = true
+alpha_cut = 1
+texture = ExtResource("6_noxtn")
+
+[node name="Sprite3D6" type="Sprite3D" parent="Sprite3D" unique_id=749246660]
+transform = Transform3D(0.6170268, -0.09221526, -0.7815205, 0.1478094, 0.9890159, 0, 0.77293617, -0.115516074, 0.62387955, 0, 1.2840555, 0.20786953)
+shaded = true
+alpha_cut = 1
+texture = ExtResource("7_0w8ks")
+
+[node name="Sprite3D7" type="Sprite3D" parent="Sprite3D" unique_id=362970930]
+transform = Transform3D(1, 0, 0, 0, 0.99999994, 0, 0, 0, 1.0000001, 0, 1.2840555, 0.07225859)
+shaded = true
+alpha_cut = 1
+texture = ExtResource("8_uv0eg")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Sprite3D" unique_id=1323786688]
+libraries/ = SubResource("AnimationLibrary_pb0qf")

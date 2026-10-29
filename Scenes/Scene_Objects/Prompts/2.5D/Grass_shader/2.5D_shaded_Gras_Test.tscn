@@ -1,0 +1,119 @@
+[gd_scene format=3 uid="uid://oudy2oa78bij"]
+
+[ext_resource type="Shader" uid="uid://c0dxqfpawh1h0" path="res://Scenes/Scene_Objects/Prompts/2.5D/Grass_shader/2.5D_shaded_Gras_Test.gdshader" id="2_6ahuv"]
+[ext_resource type="Texture2D" uid="uid://bhpabcvov84d6" path="res://Assets/Props/2.5D_Animatable_Grass_Test/2.png" id="3_wk3im"]
+[ext_resource type="Texture2D" uid="uid://c5r23ctppgdoq" path="res://Assets/Props/2.5D_Animatable_Grass_Test/1.png" id="4_pyqxv"]
+[ext_resource type="Texture2D" uid="uid://d22wysys1obu6" path="res://Assets/Props/2.5D_Animatable_Grass_Test/3.png" id="5_coxhf"]
+[ext_resource type="Texture2D" uid="uid://qwwybf4xfc2b" path="res://Assets/Props/2.5D_Animatable_Grass_Test/4.png" id="6_7q30m"]
+[ext_resource type="Texture2D" uid="uid://c58tcw8p21rjy" path="res://Assets/Props/2.5D_Animatable_Grass_Test/5.png" id="7_e4iey"]
+[ext_resource type="Texture2D" uid="uid://07jweyei0beq" path="res://Assets/Props/2.5D_Animatable_Grass_Test/6.png" id="8_er3gd"]
+[ext_resource type="Texture2D" uid="uid://d34a0ww3okh8i" path="res://Assets/Props/2.5D_Animatable_Grass_Test/7.png" id="9_8506r"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_gjbpj"]
+radius = 0.6171698
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_q7ds8"]
+render_priority = 0
+shader = ExtResource("2_6ahuv")
+shader_parameter/meine_textur = ExtResource("3_wk3im")
+shader_parameter/strength = 0.04
+shader_parameter/speed = 2.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_7awwc"]
+render_priority = 0
+shader = ExtResource("2_6ahuv")
+shader_parameter/meine_textur = ExtResource("4_pyqxv")
+shader_parameter/strength = 0.04
+shader_parameter/speed = 2.0
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_wqgg0"]
+load_path = "res://.godot/imported/1.png-60151f207f948c455b6466af1799ea85.s3tc.ctex"
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_bnxaj"]
+render_priority = 0
+shader = ExtResource("2_6ahuv")
+shader_parameter/meine_textur = ExtResource("5_coxhf")
+shader_parameter/strength = 0.04
+shader_parameter/speed = 2.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ccfpp"]
+render_priority = 0
+shader = ExtResource("2_6ahuv")
+shader_parameter/meine_textur = ExtResource("6_7q30m")
+shader_parameter/strength = 0.04
+shader_parameter/speed = 2.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_8stn6"]
+render_priority = 0
+shader = ExtResource("2_6ahuv")
+shader_parameter/meine_textur = ExtResource("7_e4iey")
+shader_parameter/strength = 0.04
+shader_parameter/speed = 2.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_igt12"]
+render_priority = 0
+shader = ExtResource("2_6ahuv")
+shader_parameter/meine_textur = ExtResource("8_er3gd")
+shader_parameter/strength = 0.04
+shader_parameter/speed = 2.0
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_jexdp"]
+load_path = "res://.godot/imported/1.png-60151f207f948c455b6466af1799ea85.s3tc.ctex"
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_qot6y"]
+render_priority = 0
+shader = ExtResource("2_6ahuv")
+shader_parameter/meine_textur = ExtResource("9_8506r")
+shader_parameter/strength = 0.04
+shader_parameter/speed = 2.0
+
+[node name="2_5dAnimatedGrasTest" type="Area3D" unique_id=510978416]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1288667078]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.65304935, -0.31479466)
+shape = SubResource("SphereShape3D_gjbpj")
+
+[node name="Sprite3D" type="MeshInstance3D" parent="." unique_id=1786293360]
+material_override = SubResource("ShaderMaterial_q7ds8")
+
+[node name="Sprite3D4" type="Sprite3D" parent="Sprite3D" unique_id=1279985497]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.2840555, -0.17423958)
+material_override = SubResource("ShaderMaterial_7awwc")
+shaded = true
+alpha_cut = 1
+texture = SubResource("CompressedTexture2D_wqgg0")
+
+[node name="Sprite3D5" type="Sprite3D" parent="Sprite3D" unique_id=2097701312]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.2840555, 0.3472079)
+material_override = SubResource("ShaderMaterial_bnxaj")
+shaded = true
+alpha_cut = 1
+texture = SubResource("CompressedTexture2D_wqgg0")
+
+[node name="Sprite3D3" type="Sprite3D" parent="Sprite3D" unique_id=1503342033]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.2840555, 0.2211101)
+material_override = SubResource("ShaderMaterial_ccfpp")
+shaded = true
+alpha_cut = 1
+texture = SubResource("CompressedTexture2D_wqgg0")
+
+[node name="Sprite3D2" type="Sprite3D" parent="Sprite3D" unique_id=1890600976]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.2840555, -0.10643792)
+material_override = SubResource("ShaderMaterial_8stn6")
+shaded = true
+alpha_cut = 1
+texture = SubResource("CompressedTexture2D_wqgg0")
+
+[node name="Sprite3D6" type="Sprite3D" parent="Sprite3D" unique_id=749246660]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.2840555, 0.20786953)
+material_override = SubResource("ShaderMaterial_igt12")
+shaded = true
+alpha_cut = 1
+texture = SubResource("CompressedTexture2D_jexdp")
+
+[node name="Sprite3D7" type="Sprite3D" parent="Sprite3D" unique_id=362970930]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.2840555, 0.07225859)
+material_override = SubResource("ShaderMaterial_qot6y")
+shaded = true
+alpha_cut = 1
+texture = SubResource("CompressedTexture2D_wqgg0")
